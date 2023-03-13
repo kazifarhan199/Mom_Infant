@@ -52,9 +52,9 @@ def postSaveRawDataSignal(sender, instance, created, **kwargs):
             else:
                 color = "Dont_know_who"
 
-            
+            now = datetime.datetime.now()
 
-            file_name = f"{color}-{key}-{head}-{stamp.date()}-{stamp.time().hour}:{stamp.time().minute}.csv"
+            file_name = f"{color}-{key}-{head}-{stamp.date()}-{stamp.time().hour}:{stamp.time().minute}-capturedAt{now}.csv"
             
             data_file = open("data/"+file_name, 'w')
             csv_writer = csv.writer(data_file)
